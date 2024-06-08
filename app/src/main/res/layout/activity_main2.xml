@@ -60,6 +60,13 @@
                 android:padding="8dp"
                 android:layout_marginTop="40dp"
                 />
+                <TextView
+                    android:id="@+id/tv_email_warning"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:visibility="gone"
+                    android:text="Invalid email address." />
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -123,6 +130,7 @@
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:text="Not yet registered? Sign Up Now"
+            android:textColor="@drawable/item_press"
             android:textSize="14sp"
             android:textAlignment="center"
             android:layout_marginBottom="20dp"

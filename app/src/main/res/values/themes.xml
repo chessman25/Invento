@@ -3,7 +3,8 @@
     <style name="Base.Theme.InventoryOrganizer" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        <item name="colorPrimary">@color/lightBlue</item>
+        <item name="colorPrimary">@color/darkGreen</item>
+        <item name="colorPrimaryVariant">@color/lightBlue</item>
     </style>
 
     <style name="Theme.InventoryOrganizer" parent="Base.Theme.InventoryOrganizer" />

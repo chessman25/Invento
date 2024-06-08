@@ -71,6 +71,14 @@
             android:drawablePadding="8dp"
             android:padding="8dp"
             />
+                <TextView
+                    android:id="@+id/tv_email_warning"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:visibility="gone"
+                    android:text="Invalid email address." />
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -90,6 +98,13 @@
             android:drawablePadding="8dp"
             android:padding="8dp"
             />
+                    <TextView
+                        android:id="@+id/tv_password_warning"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:visibility="gone"
+                        android:text="Password must be at least 8 characters long, contain a number and a special character." />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -111,6 +126,13 @@
             android:drawablePadding="8dp"
             android:padding="8dp"
             />
+                    <TextView
+                        android:id="@+id/tv_confirm_password_warning"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:visibility="gone"
+                        android:text="Passwords do not match." />
                 </com.google.android.material.textfield.TextInputLayout>
 
         <Button
