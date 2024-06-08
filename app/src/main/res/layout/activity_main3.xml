@@ -29,7 +29,7 @@
             app:cardCornerRadius="30dp"
             app:cardElevation="20dp"
             android:background="@drawable/customet"
-            app:cardBackgroundColor="#373A40">
+            app:cardBackgroundColor="#FFFFFF">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
             android:text="Create Account"
             android:textAlignment="center"
             android:textStyle="bold"
-            android:textColor="#FF5733"
+            android:textColor="#163631"
             android:textSize="50sp"
             />
         <EditText
@@ -53,8 +53,8 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="Username "
-            android:textColor="#FFFFFF"
-            android:textColorHint="#FFFFFF"
+            android:textColor="#163631"
+            android:textColorHint="#163631"
             android:background="@drawable/customet"
             android:drawablePadding="8dp"
             android:padding="8dp"
@@ -65,47 +65,62 @@
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
             android:hint="Email "
-            android:textColor="#FFFFFF"
-            android:textColorHint="#FFFFFF"
+            android:textColor="#163631"
+            android:textColorHint="#163631"
             android:background="@drawable/customet"
             android:drawablePadding="8dp"
             android:padding="8dp"
             />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:hint="Password"
+                    android:textColorHint="#163631"
+                    app:passwordToggleEnabled="true">
         <EditText
             android:id="@+id/pass"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
-            android:hint="Password "
-            android:textColor="#FFFFFF"
-            android:textColorHint="#FFFFFF"
+            android:textColor="#163631"
+            android:textColorHint="#163631"
             android:inputType="textPassword"
             android:background="@drawable/customet"
             android:drawablePadding="8dp"
             android:padding="8dp"
             />
+                </com.google.android.material.textfield.TextInputLayout>
 
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textColorHint="#163631"
+                    app:passwordToggleEnabled="true">
         <EditText
             android:id="@+id/confirmPassword"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
             android:hint="Confirm Password "
-            android:textColor="#FFFFFF"
-            android:textColorHint="#FFFFFF"
+            android:textColor="#163631"
+            android:textColorHint="#163631"
             android:inputType="textPassword"
             android:background="@drawable/customet"
             android:drawablePadding="8dp"
             android:padding="8dp"
             />
+                </com.google.android.material.textfield.TextInputLayout>
+
         <Button
             android:id="@+id/cBtn"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="Create"
-            android:textColor="#FF5733"
+            android:textColor="#66C6BA"
             android:textSize="18sp"
-            android:backgroundTint="#FFFFFF"
+            android:backgroundTint="#163631"
             android:layout_marginTop="20dp"
             />
             </LinearLayout>
@@ -119,8 +134,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Back"
-                android:textColor="#FFFFFF"
-                android:backgroundTint="#FF5733"
+                android:textColor="#66C6BA"
+                android:backgroundTint="#163631"
                 android:layout_marginTop="50dp"
                 />
         </LinearLayout>

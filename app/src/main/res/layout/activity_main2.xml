@@ -52,8 +52,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:hint="Email"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#FFFFFF"
+                android:textColor="#163631"
+                android:textColorHint="#163631"
                 android:drawableLeft="@drawable/baseline_person_24"
                 android:background="@drawable/customet"
                 android:drawablePadding="8dp"
@@ -65,7 +65,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="40dp"
                     android:hint="Password"
-                    android:textColorHint="#FFFFFF"
+                    android:textColorHint="#163631"
                     app:passwordToggleEnabled="true">
             <EditText
                 android:id="@+id/Password"
@@ -73,7 +73,7 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="40dp"
                 android:inputType="textPassword"
-                android:textColor="#FFFFFF"
+                android:textColor="#163631"
 
                 android:drawableLeft="@drawable/baseline_lock_24"
                 android:background="@drawable/customet"
