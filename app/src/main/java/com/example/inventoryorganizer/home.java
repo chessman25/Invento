@@ -2,9 +2,11 @@ package com.example.inventoryorganizer;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -20,6 +22,44 @@ public class home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         BottomNavigationView bottom_nav = findViewById(R.id.bottomNavigationView);
         bottom_nav.setSelectedItemId(R.id.homeNav);
+
+        CardView addButton = findViewById(R.id.addBtn);
+        CardView updateButton = findViewById(R.id.updateBtn);
+        CardView deleteButton = findViewById(R.id.deleteBtn);
+        CardView viewButton = findViewById(R.id.selectBtn);
+
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(home.this, addActivity.class);
+                startActivity(intent);
+
+            }
+        });
+        updateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(home.this, modify.class);
+                startActivity(intent);
+
+            }
+        });
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(home.this, delete.class);
+                startActivity(intent);
+
+            }
+        });
+        viewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(home.this, view.class);
+                startActivity(intent);
+
+            }
+        });
 
         bottom_nav.setOnItemSelectedListener(item -> {
             if (item.getItemId() == R.id.profile) {
