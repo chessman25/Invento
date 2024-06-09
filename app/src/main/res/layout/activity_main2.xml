@@ -25,7 +25,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
-
             app:cardCornerRadius="30dp"
             app:cardElevation="20dp"
             android:background="@drawable/customet"
@@ -81,7 +80,6 @@
                 android:layout_marginTop="40dp"
                 android:inputType="textPassword"
                 android:textColor="#163631"
-
                 android:drawableLeft="@drawable/baseline_lock_24"
                 android:background="@drawable/customet"
                 android:drawablePadding="8dp"

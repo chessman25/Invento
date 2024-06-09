@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#FFFFFF"
-    tools:context=".HomeFragment">
+    android:background="@color/lightBlue"
+    android:padding="16dp"
+    tools:context=".home">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/icon"
+            android:layout_marginTop="20dp"/>
+    <androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="30dp"
+    app:cardCornerRadius="30dp"
+    app:cardElevation="20dp"
+    android:background="@drawable/customet"
+    app:cardBackgroundColor="#FFFFFF">
 
 
     <LinearLayout
@@ -13,7 +34,9 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center"
+        android:padding="24dp"
         android:gravity="center">
+
         <androidx.cardview.widget.CardView
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -125,5 +148,24 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:labelVisibilityMode="unlabeled"
+        android:background="@drawable/addition"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="50dp"
+        app:menu="@menu/botton_nav_menu"
+        app:itemIconSize="30dp"
+        app:itemIconTint="@drawable/item_selector"
+        app:itemRippleColor="@color/transparent">
 
-</FrameLayout>
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    </LinearLayout>
+
+</RelativeLayout>

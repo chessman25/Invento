@@ -20,6 +20,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -43,28 +44,23 @@ public class MainActivity4 extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main4);
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setSelectedItemId(R.id.homeNav);
+        BottomNavigationView bottom_nav = findViewById(R.id.bottomNavigationView);
+        bottom_nav.setSelectedItemId(R.id.homeNav);
 
-        bottomNavigationView.setOnItemSelectedListener(item -> {
-            if (item.getItemId() == R.id.homeNav) {
-                loadFragment(new HomeFragment(), false);
-            } else if (item.getItemId() ==R.id.profile) {
-                loadFragment(new HomeFragment(), false);
+        bottom_nav.setOnItemSelectedListener(item -> {
+            if (item.getItemId() == R.id.profile) {
+                    startActivity(new Intent(getApplicationContext(), Profile.class));
+                    overridePendingTransition(0, 0);
+                    finish();
+                    return true;
+            } else if (item.getItemId() == R.id.homeNav) {
+                startActivity(new Intent(getApplicationContext(), home.class));
+                overridePendingTransition(0, 0);
+                finish();
+                return true;
             }
-            return true;
-        });
-        loadFragment(new HomeFragment(), true);
-    }
-    private void loadFragment(Fragment fragment, boolean isAppInitialized){
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        if (isAppInitialized){
-            fragmentTransaction.add(R.id.frameLay, fragment);
-        }else{
-            fragmentTransaction.replace(R.id.frameLay, fragment);
-        }
 
-        fragmentTransaction.commit();
+            return false;
+        });
     }
 }
