@@ -140,9 +140,9 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="Create"
-            android:textColor="#66C6BA"
+            android:textColor="#000000"
             android:textSize="18sp"
-            android:backgroundTint="#163631"
+            android:background="@drawable/buttonforview"
             android:layout_marginTop="20dp"
             />
             </LinearLayout>
@@ -156,8 +156,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Back"
-                android:textColor="#66C6BA"
-                android:backgroundTint="#163631"
+                android:textColor="#000000"
+                android:background="@drawable/buttonforview"
 
                 />
         </LinearLayout>

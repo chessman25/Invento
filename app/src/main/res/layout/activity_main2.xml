@@ -102,8 +102,8 @@
                 android:layout_height="50dp"
                 android:text="Login"
                 android:textSize="18sp"
-                android:textColor="#66C6BA"
-                android:backgroundTint="#163631"
+                android:textColor="#000000"
+                android:background="@drawable/buttonforview"
                 android:layout_marginTop="20dp"
                 />
 
@@ -113,8 +113,8 @@
                 android:layout_height="wrap_content"
                 android:text="Exit"
                 android:textSize="18sp"
-                android:textColor="#66C6BA"
-                android:backgroundTint="#163631"
+                android:textColor="#000000"
+                android:background="@drawable/buttonforview"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 />
