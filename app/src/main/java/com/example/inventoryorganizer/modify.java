@@ -21,22 +21,12 @@ public class modify extends AppCompatActivity {
         setContentView(R.layout.activity_modify);
 
         Button backButton = findViewById(R.id.backV);
-        Button viewButton = findViewById(R.id.viewV);
-        Button deleteButton = findViewById(R.id.deleteV);
-        Button addButton = findViewById(R.id.addV);
+
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
-            }
-        });
-
-        addButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(modify.this, addActivity.class);
-                startActivity(intent);
             }
         });
     }

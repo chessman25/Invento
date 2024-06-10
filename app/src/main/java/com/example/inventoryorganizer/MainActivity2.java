@@ -20,6 +20,7 @@ import android.widget.TextView;
 
 public class MainActivity2 extends AppCompatActivity {
     private EditText Email;
+
     private TextView EmailWarning;
 
     @Override
@@ -33,6 +34,10 @@ public class MainActivity2 extends AppCompatActivity {
         TextView createBtn = findViewById(R.id.createButton);
         Button exitButton = findViewById(R.id.exitBtn);
         EmailWarning = findViewById(R.id.tv_email_warning);
+
+
+
+
 
         Email.addTextChangedListener(new TextWatcher() {
             @Override

@@ -20,9 +20,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Product Details"
+            android:textStyle="bold"
             android:textSize="24sp"
             android:textColor="#163631"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="50dp"
             android:layout_centerHorizontal="true"/>
 
         <androidx.cardview.widget.CardView
@@ -166,60 +167,17 @@
                     android:background="@drawable/buttonforview"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-        <LinearLayout
-            android:layout_width="350dp"
-            android:layout_height="83dp"
-            android:layout_margin="10dp"
-            android:layout_marginBottom="82dp"
-            android:background="@drawable/bgscroll"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/backButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:layout_marginLeft="20dp"
-                android:background="@drawable/buttonforview"
-                android:text="BACK"
-                android:textColor="#ffffff" />
-
-            <Button
-                android:id="@+id/viewButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/buttonforview"
-                android:text="View"
-                android:textColor="#ffffff" />
-
-            <Button
-                android:id="@+id/modifyButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/buttonforview"
-                android:text="MODIFY"
-                android:textColor="#ffffff" />
-
-
-            <Button
-                android:id="@+id/deleteButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/buttonforview"
-                android:text="DELETE"
-                android:textColor="#ffffff" />
-        </LinearLayout>
     </LinearLayout>
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/buttonforview"
+        android:text="BACK"
+        android:textColor="#ffffff" />
 
 </RelativeLayout>

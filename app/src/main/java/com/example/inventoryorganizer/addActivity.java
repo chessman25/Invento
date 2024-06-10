@@ -12,7 +12,7 @@ import android.widget.EditText;
 
 public class addActivity extends AppCompatActivity {
     private EditText editTextProduct, editTextCategory, editTextPrice, editTextNumber;
-    private Button buttonAddItem, buttonReset, buttonBack, modifyButton, viewButton, deleteButton;
+    private Button buttonAddItem, buttonReset, buttonBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,6 @@ public class addActivity extends AppCompatActivity {
         editTextPrice = findViewById(R.id.editTextPrice);
         editTextNumber = findViewById(R.id.editTextNumber);
         buttonBack = findViewById(R.id.backButton);
-        modifyButton = findViewById(R.id.modifyButton);
 
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,13 +33,6 @@ public class addActivity extends AppCompatActivity {
             }
         });
 
-        modifyButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(addActivity.this, modify.class);
-                startActivity(intent);
-            }
-        });
     }
 
 }

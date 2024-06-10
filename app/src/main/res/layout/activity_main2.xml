@@ -66,13 +66,17 @@
                     android:textColor="@android:color/holo_red_dark"
                     android:visibility="gone"
                     android:text="Invalid email address." />
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="20dp"
                     android:hint="Password"
                     android:textColorHint="#163631"
-                    app:passwordToggleEnabled="true">
+                    app:endIconMode="password_toggle"
+                    app:endIconDrawable="@drawable/icon_toggle"
+                    >
+
             <EditText
                 android:id="@+id/Password"
                 android:layout_width="match_parent"
@@ -84,8 +88,10 @@
                 android:background="@drawable/customet"
                 android:drawablePadding="8dp"
                 android:padding="8dp"
+                android:visibility="visible"
                 />
                 </com.google.android.material.textfield.TextInputLayout>
+
 
             <CheckBox
                 android:layout_width="wrap_content"

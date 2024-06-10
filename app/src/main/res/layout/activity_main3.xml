@@ -85,7 +85,8 @@
                     android:layout_marginTop="20dp"
                     android:hint="Password"
                     android:textColorHint="#163631"
-                    app:passwordToggleEnabled="true">
+                    app:endIconMode="password_toggle"
+                    app:endIconDrawable="@drawable/icon_toggle">
         <EditText
             android:id="@+id/pass"
             android:layout_width="match_parent"
@@ -112,7 +113,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:textColorHint="#163631"
-                    app:passwordToggleEnabled="true">
+                    app:endIconMode="password_toggle"
+                    app:endIconDrawable="@drawable/icon_toggle">
         <EditText
             android:id="@+id/confirmPassword"
             android:layout_width="match_parent"
@@ -151,17 +153,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <Button
-                android:id="@+id/backBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Back"
-                android:textColor="#000000"
-                android:background="@drawable/buttonforview"
 
-                />
         </LinearLayout>
 
     </LinearLayout>
+    <Button
+        android:id="@+id/backBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:textColor="#000000"
+        android:background="@drawable/buttonforview"
+
+        />
 
 </RelativeLayout>
