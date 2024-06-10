@@ -5,6 +5,130 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#8bd4cb"
     tools:context=".delete">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="69dp"
+        android:layout_marginTop="231dp"
+        android:layout_marginEnd="69dp"
+        android:layout_marginBottom="616dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="DELETE PAGE"
+        android:textColor="#163631"
+        android:textSize="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></TextView>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="155dp"
+        android:layout_marginTop="115dp"
+        android:layout_marginEnd="156dp"
+        android:layout_marginBottom="699dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon" />
+
+    <LinearLayout
+        android:layout_width="404dp"
+        android:layout_height="488dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="288dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="138dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="386dp"
+            android:layout_height="383dp"
+            app:cardCornerRadius="30dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:id="@+id/prodid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="Input the 'Product ID' you want to DELETE"
+                    android:textColor="#163631"
+                    android:textSize="25dp"></TextView>
+
+                <EditText
+                    android:id="@+id/prodcuidtdelete"
+                    android:layout_width="337dp"
+                    android:layout_height="68dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/customet"
+                    android:drawablePadding="10dp"
+                    android:hint="Product ID"
+                    android:padding="10dp"
+                    android:textColor="#163631"
+                    android:textColorHint="#8bd4cb" />
+
+                <CheckBox
+                    android:id="@+id/deletecheck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:buttonTint="#66c6ba"
+                    android:textSize="20dp"
+                    android:hint="#66c6ba"
+                    android:text="Check to Confirm"
+                    android:textColor="#66c6ba" />
+
+                <Button
+                    android:id="@+id/finaldelete"
+                    android:layout_width="144dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/buttonforview"
+                    android:text="DELETE"
+                    android:textSize="30dp"
+                    tools:layout_editor_absoluteX="116dp"
+                    tools:layout_editor_absoluteY="602dp" />
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/DBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="310dp"
+        android:layout_marginBottom="790dp"
+        android:background="@drawable/buttonforview"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="Back"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
