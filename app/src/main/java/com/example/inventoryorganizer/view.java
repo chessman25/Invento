@@ -81,7 +81,7 @@ public class view extends AppCompatActivity {
             productIdTextView.setId(View.generateViewId());
             productIdTextView.setMaxLines(1);
             productIdTextView.setEllipsize(android.text.TextUtils.TruncateAt.END);
-            productIdTextView.setTextSize(14); // Adjust text size if needed
+            productIdTextView.setTextSize(14);
             productIdTextView.setPadding(64, 16, 16, 16);
             productIdTextView.setText("Product ID: " + productId);
             linearLayout.addView(productIdTextView);
@@ -99,7 +99,7 @@ public class view extends AppCompatActivity {
             productCategoryTextView.setId(View.generateViewId());
             productCategoryTextView.setMaxLines(1);
             productCategoryTextView.setEllipsize(android.text.TextUtils.TruncateAt.END);
-            productCategoryTextView.setTextSize(14); // Adjust text size if needed
+            productCategoryTextView.setTextSize(14);
             productCategoryTextView.setPadding(64, 16, 16, 16);
             productCategoryTextView.setText("Category: " + category);
             linearLayout.addView(productCategoryTextView);
@@ -108,7 +108,7 @@ public class view extends AppCompatActivity {
             productPriceTextView.setId(View.generateViewId());
             productPriceTextView.setMaxLines(1);
             productPriceTextView.setEllipsize(android.text.TextUtils.TruncateAt.END);
-            productPriceTextView.setTextSize(14); // Adjust text size if needed
+            productPriceTextView.setTextSize(14);
             productPriceTextView.setPadding(64, 16, 16, 16);
             productPriceTextView.setText("Price: " + price);
             linearLayout.addView(productPriceTextView);
@@ -117,7 +117,7 @@ public class view extends AppCompatActivity {
             productQuantityTextView.setId(View.generateViewId());
             productQuantityTextView.setMaxLines(1);
             productQuantityTextView.setEllipsize(android.text.TextUtils.TruncateAt.END);
-            productQuantityTextView.setTextSize(14); // Adjust text size if needed
+            productQuantityTextView.setTextSize(14);
             productQuantityTextView.setPadding(64, 16, 16, 16);
             productQuantityTextView.setText("Quantity: " + quantity);
             linearLayout.addView(productQuantityTextView);

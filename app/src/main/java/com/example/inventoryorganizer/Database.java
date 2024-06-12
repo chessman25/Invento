@@ -105,7 +105,7 @@ public class Database extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = null;
         try {
-            String query = "SELECT * FROM users WHERE username=?";
+            String query = "SELECT * FROM " + USER_TABLE_NAME + " WHERE " + USER_COL_2 + "=?";
             cursor = db.rawQuery(query, new String[]{username});
 
             return cursor.getCount() > 0;

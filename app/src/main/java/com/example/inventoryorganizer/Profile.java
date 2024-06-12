@@ -72,7 +72,7 @@ public class Profile extends AppCompatActivity {
         }
 
 
-        // Logout button implementation
+
         findViewById(R.id.profile_logout).setOnClickListener(view -> {
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.remove("loggedInUserEmail");
