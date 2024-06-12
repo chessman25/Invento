@@ -1,27 +1,30 @@
 package com.example.inventoryorganizer;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class delete extends AppCompatActivity {
-
-    private Button DelBttn, BackBttn;
+    Database mydb;
+    EditText DeleteID;
+    Button finaldelete;
+    CheckBox confirmDeleteCheckbox;
+    Button BackBttn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_delete);
+        mydb = new Database(this);
 
-        DelBttn = findViewById(R.id.finaldelete);
+        DeleteID = findViewById(R.id.delete_ID);
+        finaldelete = findViewById(R.id.finaldelete);
+        confirmDeleteCheckbox = findViewById(R.id.deletecheck);
         BackBttn = findViewById(R.id.DBack);
 
         BackBttn.setOnClickListener(new View.OnClickListener() {
@@ -31,6 +34,32 @@ public class delete extends AppCompatActivity {
             }
         });
 
+        deleted();
+    }
 
+    public void deleted() {
+        finaldelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!confirmDeleteCheckbox.isChecked()) {
+                    Toast.makeText(delete.this, "Please check the confirmation box to delete.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                String productID = DeleteID.getText().toString();
+                if (productID.isEmpty()) {
+                    Toast.makeText(delete.this, "Please enter a Product ID.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                Integer delete = mydb.deleteProduct(productID);
+                if (delete > 0) {
+                    Toast.makeText(delete.this, "Item deleted successfully!", Toast.LENGTH_SHORT).show();
+                    DeleteID.setText("");
+                } else {
+                    Toast.makeText(delete.this, "Product ID not found.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 }

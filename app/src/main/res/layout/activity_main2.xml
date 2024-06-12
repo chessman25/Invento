@@ -92,16 +92,15 @@
                 />
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <TextView
+                    android:id="@+id/tv_password_warning"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:visibility="gone"
+                    android:text="Invalid password." />
 
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Keep me signed in"
-                android:textColor="#66c6ba"
-                android:hint="#66c6ba"
-                android:buttonTint="#66c6ba"
-                android:layout_marginTop="20dp"
-                />
+
             <Button
                 android:id="@+id/loginBtn"
                 android:layout_width="match_parent"

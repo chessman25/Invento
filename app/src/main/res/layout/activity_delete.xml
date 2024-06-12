@@ -75,7 +75,7 @@
                     android:textSize="25dp"></TextView>
 
                 <EditText
-                    android:id="@+id/prodcuidtdelete"
+                    android:id="@+id/delete_ID"
                     android:layout_width="337dp"
                     android:layout_height="68dp"
                     android:layout_marginBottom="20dp"

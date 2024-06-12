@@ -62,13 +62,18 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
-
-                <TextView
-                    android:id="@+id/fullName"
-                    android:layout_width="match_parent"
+                <Button
+                    android:id="@+id/changeProf"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="40dp"
-                    android:text=" " />
+                    android:layout_gravity="center"
+                    android:text="Change Profile"
+                    android:background="@drawable/customet"
+                    android:drawablePadding="8dp"
+                    android:padding="8dp"
+                    android:layout_marginBottom="100dp"/>
+
+
 
                 <TextView
                     android:id="@+id/Profile_Username"
@@ -80,7 +85,10 @@
                     android:background="@drawable/customet"
                     android:drawablePadding="8dp"
                     android:padding="8dp"
-                    android:text="" />
+                    android:text=" "
+                    android:textColor="@color/darkGreen"
+                    android:textStyle="bold"
+                    android:textAlignment="center"/>
 
                 <TextView
                     android:id="@+id/Profile_Email"
@@ -92,19 +100,24 @@
                     android:background="@drawable/customet"
                     android:drawablePadding="8dp"
                     android:padding="8dp"
-                    android:text=" " />
+                    android:text=" "
+                    android:textColor="@color/darkGreen"
+                    android:textAlignment="center"
+                    android:textStyle="bold"/>
 
-                <TextView
-                    android:id="@+id/Profile_Password"
+                <Button
+                    android:id="@+id/profile_logout"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_margin="5dp"
                     android:layout_marginTop="40dp"
                     android:layout_weight="1"
-                    android:background="@drawable/customet"
+                    android:background="@drawable/btn_press"
                     android:drawablePadding="8dp"
                     android:padding="8dp"
-                    android:text=" " />
+                    android:textColor="@color/darkGreen"
+                    android:text=" Log Out"
+                    android:textStyle="bold"/>
 
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>

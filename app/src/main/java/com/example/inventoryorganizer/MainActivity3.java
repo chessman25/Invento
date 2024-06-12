@@ -1,26 +1,25 @@
 package com.example.inventoryorganizer;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.view.View;
-import android.widget.Button;
-import android.content.Intent;
-import android.widget.EditText;
-import android.widget.TextView;
-
 public class MainActivity3 extends AppCompatActivity {
     private EditText etPassword;
     private EditText etEmail;
+    private EditText etUsername;
     private EditText etConfirmPassword;
     private TextView tvConfirmPasswordWarning;
     private TextView tvPasswordWarning;
     private TextView tvEmailWarning;
-
+    private Database database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,71 +27,20 @@ public class MainActivity3 extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main3);
 
+        database = new Database(this);
+
         Button backButton = findViewById(R.id.backBtn);
         Button confirmButton = findViewById(R.id.cBtn);
 
         etEmail = findViewById(R.id.email);
         etPassword = findViewById(R.id.pass);
+        etUsername = findViewById(R.id.Username);
         tvPasswordWarning = findViewById(R.id.tv_password_warning);
         tvEmailWarning = findViewById(R.id.tv_email_warning);
         etConfirmPassword = findViewById(R.id.confirmPassword);
         tvConfirmPasswordWarning = findViewById(R.id.tv_confirm_password_warning);
 
-        etEmail.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                // Not used
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                validateEmail(s.toString());
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                // Not used
-            }
-        });
-
-        etPassword.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                // Not used
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                validatePassword(s.toString());
-                validateConfirmPassword(etPassword.getText().toString(), etConfirmPassword.getText().toString());
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                // Not used
-            }
-        });
-        etConfirmPassword.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                // Not used
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                validateConfirmPassword(etPassword.getText().toString(), s.toString());
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                // Not used
-            }
-        });
-
-
-
-
-        backButton.setOnClickListener(new View.OnClickListener(){
+        backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
@@ -101,31 +49,63 @@ public class MainActivity3 extends AppCompatActivity {
 
         confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity3.this, MainActivity4.class);
-                startActivity(intent);
+            public void onClick(View v) {
+                String email = etEmail.getText().toString().trim();
+                String username = etUsername.getText().toString().trim();
+                String password = etPassword.getText().toString().trim();
+                String confirmPassword = etConfirmPassword.getText().toString().trim();
+
+                if (username.isEmpty()){
+                    Toast.makeText(MainActivity3.this, "Username cannot be empty", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (!isValidEmail(email)) {
+                    Toast.makeText(MainActivity3.this, "Invalid email format", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (!isValidPassword(password)) {
+                    Toast.makeText(MainActivity3.this, "Password must be at least 8 characters long and contain at least one digit and one special character", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (!password.equals(confirmPassword)) {
+                    Toast.makeText(MainActivity3.this, "Passwords don't match", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (database.validateUserLogin(email,password)) {
+                    Toast.makeText(MainActivity3.this, "Account already exists", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (database.isUserExists(username)) {
+                    Toast.makeText(MainActivity3.this, "Username already exists", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                boolean isInserted = database.insertUser(email, username, password);
+                if (isInserted) {
+                    Toast.makeText(MainActivity3.this, "Account created successfully", Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(MainActivity3.this, MainActivity2.class);
+                    startActivity(intent);
+
+
+                } else {
+                    Toast.makeText(MainActivity3.this, "Account creation failed", Toast.LENGTH_SHORT).show();
+                }
             }
         });
+
     }
-    private void validateEmail(String email) {
-        if (!email.contains("@") || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            tvEmailWarning.setVisibility(TextView.VISIBLE);
-        } else {
-            tvEmailWarning.setVisibility(TextView.GONE);
-        }
+
+    private boolean isValidEmail(String email) {
+        String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+        return email.matches(emailPattern);
     }
-    private void validatePassword(String password) {
-        if (password.length() < 8 || !password.matches(".*\\d.*") || !password.matches(".*[!@#$%^&*].*")) {
-            tvPasswordWarning.setVisibility(TextView.VISIBLE);
-        } else {
-            tvPasswordWarning.setVisibility(TextView.GONE);
-        }
+
+    private boolean isValidPassword(String password) {
+        String passwordPattern = "^(?=.*[0-9])(?=.*[!@#$%^&*])(?=\\S+$).{8,}$";
+        return password.matches(passwordPattern);
     }
-    private void validateConfirmPassword(String password, String confirmPassword) {
-        if (!password.equals(confirmPassword)) {
-            tvConfirmPasswordWarning.setVisibility(TextView.VISIBLE);
-        } else {
-            tvConfirmPasswordWarning.setVisibility(TextView.GONE);
-        }
-    }
-    }
+}
